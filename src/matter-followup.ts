@@ -1,0 +1,4 @@
+import { infrai } from "./infrai-client";
+export type MatterIntake = { matterId: string; recipient: string; signedDocumentDelivered: boolean; deadline: string; today: string };
+export function shouldSendDeadlineFollowup(input: MatterIntake): boolean { const days = Math.ceil((Date.parse(input.deadline) - Date.parse(input.today)) / 86400000); return input.signedDocumentDelivered && days >= 0 && days <= 3; }
+export async function followUpMatter(input: MatterIntake) { if (!shouldSendDeadlineFollowup(input)) return { sent: false as const, reason: "outside-followup-window" }; const result = await infrai.email.send({ to: input.recipient, subject: `Matter ${input.matterId}: deadline follow-up`, html: `<p>The signed document for matter ${input.matterId} was delivered. The deadline is ${input.deadline}.</p>` }, `matter-followup:${input.matterId}:${input.deadline}`); return { sent: true as const, messageId: result.message_id }; }

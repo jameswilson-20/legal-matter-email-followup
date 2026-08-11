@@ -1,0 +1,1 @@
+{"name":"legal-matter-email-followup","private":true,"type":"module","scripts":{"test":"tsx test/matter-followup.test.ts","demo":"tsx scripts/demo.ts"},"devDependencies":{"tsx":"^4.19.0","typescript":"^5.6.0"}}
