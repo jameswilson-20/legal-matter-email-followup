@@ -52,3 +52,7 @@ The code stays simple on purpose — here's what to set up before going live: Th
 - **Legal Matter Email Followup:** By default mail goes through a **shared** verified sender — fine for tests, but generic From + limited volume + shared reputation.
 - **Legal Matter Email Followup:** For production, verify **your own** domain: `POST /v1/email/domain/verify` with `{"domain":"mail.yourco.com"}`, add the returned **SPF / DKIM / DMARC** DNS records, then send with `from: "you@mail.yourco.com"`.
 - **Legal Matter Email Followup:** Use a dedicated subdomain and **warm it up** (ramp volume over days) to protect deliverability.
+
+## Further reading
+
+- [Healthtech Contact Flow: Choose a Custom-Domain Email API for DKIM and Polling](docs/healthtech-contact-flow-choose-a-custom-domain-em-11cs9c.md)
