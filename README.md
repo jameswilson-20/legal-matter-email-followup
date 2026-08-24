@@ -55,4 +55,5 @@ The code stays simple on purpose — here's what to set up before going live: Th
 
 ## Further reading
 
+- [Password Reset Delivery Ledger — Controlling Duplicate Email Sends After Timeout](docs/password-reset-delivery-ledger-controlling-duplic-1aoaqm.md)
 - [Property Event Notifications: 4 Controls for Email and SMS API Delivery](docs/property-event-notifications-4-controls-for-email-1bpkfk.md)
